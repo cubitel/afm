@@ -2,7 +2,7 @@ DIY Atomic Force Microscope
 ---------------------------
 
 DIY Atomic Force Microscope / Scanning Tunneling Microscope project.
-More information can be found in [Project page] (in Russian).
+More information can be found in [Project page](http://npk.cubitel.org/?/hardware/afm) (in Russian).
 
 Please note that this project is under development yet.
 
@@ -32,5 +32,3 @@ _Build requirements_
 
 ### License
 GPLv3
-
-[Project page]:http://npk.cubitel.org/?/hardware/afm
