@@ -23,26 +23,10 @@
 #include "microscope.h"
 
 
-static void ledTask(void *p)
-{
-	GPIOD->MODER = (1 << 26) | (1 << 24);
-
-	for (;;) {
-		GPIOD->ODR ^= (1 << 13);
-		vTaskDelay(500);
-	}
-}
-
 int main(void)
 {
-	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN;
-	RCC->AHB1ENR |= RCC_AHB1ENR_GPIODEN;
-
 	/* Init microscope hardware */
 	micInit();
-
-	/* Create LED task */
-	xTaskCreate(ledTask, "LED", 110, NULL, 1, NULL);
 
 	/* Create USB task */
 	xTaskCreate(usbTask, "USB", 256, NULL, 1, NULL);
